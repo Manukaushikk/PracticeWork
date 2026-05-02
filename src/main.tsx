@@ -11,10 +11,19 @@ import 'primeflex/primeflex.css'
 
 import { PrimeReactProvider } from 'primereact/api'
 
+// ✅ Redux
+import { Provider } from 'react-redux'
+import { store } from './app/store.ts'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <PrimeReactProvider value={{ ripple: true }}>
-      <App />
+
+      {/* ✅ ADD THIS */}
+      <Provider store={store}>
+        <App />
+      </Provider>
+
     </PrimeReactProvider>
   </StrictMode>
 )
